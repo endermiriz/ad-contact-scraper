@@ -71,4 +71,4 @@ python3 scraper.py
 ```
 
 ## Screenshots
-![Scraper.py]()
+![Scraper.py](https://github.com/endermiriz/ad-contact-scraper/blob/main/image/scraper.png?raw=true)
