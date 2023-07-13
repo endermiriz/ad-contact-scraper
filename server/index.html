@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QR Kod Oluşturma</title>
+  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+</head>
+<body>
+  <div id="qrcode"></div>
+
+  <script>
+    // Gelen veriyi almak için GET isteği gönder
+    fetch('http://localhost:3000/getqr') // URL'yi doğru şekilde güncelleyin
+      .then(response => response.json()) // JSON yanıtını al
+      .then(data => {
+        var qrData = data.qrData; // qrData'yı al
+
+        // QR kodu oluşturma
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+          text: qrData,
+          width: 512,
+          height: 512
+        });
+      })
+      .catch(error => {
+        console.error('Hata:', error); // Hata durumunda konsola yazdır
+      });
+  </script>
+</body>
+</html>
